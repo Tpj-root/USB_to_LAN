@@ -24,9 +24,69 @@ Testing USB-to-LAN adapters in Linux environments.
 
 
 
+# To configure your USB to LAN adapter (enxec9a0c107e8c) 
 
 
+```
+$ ip
+```
 
+```
+6: enxec9a0c107e8c: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether ec:9a:0c:10:7e:8c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.96.55/24 brd 192.168.96.255 scope global noprefixroute enxec9a0c107e8c
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f561:ba40:e06d:53de/64 scope link tentative noprefixroute 
+       valid_lft forever preferred_lft forever
+```
+
+
+```
+$ sudo lshw -C network
+```
+
+
+```
+       description: Ethernet interface
+       physical id: 3
+       bus info: usb@1:7
+       logical name: enxec9a0c107e8c
+       serial: ec:9a:0c:10:7e:8c
+       capabilities: ethernet physical
+       configuration: broadcast=yes driver=cdc_ether driverversion=5.10.0-32-amd64 firmware=CDC Ethernet Device link=no multicast=yes
+```
+
+
+## Using systemd and Network Configuration Files
+ 
+## Create a New Service
+
+```
+sudo nano /etc/systemd/system/usb-lan-auto-connect.service
+```
+
+[usb-lan-auto-connect.service](src/datasheet/nx7202c/usb-lan-auto-connect.service)
+
+
+```
+[Unit]
+Description=Auto Connect USB to LAN Adapter
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/ip link set enxec9a0c107e8c up
+ExecStart=/sbin/dhclient enxec9a0c107e8c
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl enable usb-lan-auto-connect.service
+sudo systemctl start usb-lan-auto-connect.service
+```
 
 
 

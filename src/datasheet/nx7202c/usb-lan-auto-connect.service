@@ -1,0 +1,12 @@
+[Unit]
+Description=Auto Connect USB to LAN Adapter
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/ip link set enxec9a0c107e8c up
+ExecStart=/sbin/dhclient enxec9a0c107e8c
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
