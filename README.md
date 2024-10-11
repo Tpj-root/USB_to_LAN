@@ -22,3 +22,15 @@ Testing USB-to-LAN adapters in Linux environments.
 
 
 
+
+
+
+Notes:
+/sbin/modinfo usbnet
+/sbin/modinfo cdc_ether
+filename:       /lib/modules/5.10.0-32-amd64/kernel/drivers/net/usb/cdc_ether.ko
+
+Oct 11 05:55:47 SH4D0W6 kernel: usb 1-7: Product: SZNX LAN 100M   
+Oct 11 05:55:47 SH4D0W6 kernel: usb 1-7: Manufacturer: Naxiang   
+Oct 11 05:55:47 SH4D0W6 kernel: usb 1-7: SerialNumber: EC9A0C107E8C
+
