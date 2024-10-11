@@ -23,8 +23,9 @@ Testing USB-to-LAN adapters in Linux environments.
 
 
 
+# USB-to-LAN-BASIC
 
-# To configure your USB to LAN adapter (enxec9a0c107e8c) 
+**To configure your USB to LAN adapter (enxec9a0c107e8c)**
 
 
 ```
@@ -57,9 +58,9 @@ $ sudo lshw -C network
 ```
 
 
-## Using systemd and Network Configuration Files
- 
-## Create a New Service
+**Using systemd and Network Configuration Files** 
+
+**Create a New Service**
 
 ```
 sudo nano /etc/systemd/system/usb-lan-auto-connect.service
