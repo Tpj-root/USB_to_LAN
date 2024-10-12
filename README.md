@@ -133,6 +133,19 @@ Bus 001 Device 006: ID 0bda:8152 Realtek Semiconductor Corp. RTL8152 Fast Ethern
 ```
 
 
+
+
+```
+https://electronics.stackexchange.com/questions/207268/may-rj45-connector-with-magnetics-connected-in-series
+https://lceda.cn/modules/RTL8153-USB3-zhuan-qian-zhao-wang_e46fa0cf74e543fc8797c70aea426145
+https://electronics.stackexchange.com/questions/526002/rtl8152b-ethernet-phy-heating-up
+```
+
+
+
+
+
+
 # HAMMOK 2.0
 
 
@@ -147,6 +160,12 @@ Bus 001 Device 007: ID 0bda:8152 Realtek Semiconductor Corp. RTL8152 Fast Ethern
 [  380.509107] usb 1-7: Manufacturer: Realtek
 [  380.509108] usb 1-7: SerialNumber: 00E04C36032E
 ```
+
+
+
+
+
+
 
 
 
